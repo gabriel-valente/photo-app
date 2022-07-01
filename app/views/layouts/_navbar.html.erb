@@ -5,11 +5,28 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
+      <div class="navbar-nav mr-auto">
         <a class="nav-link" href="#">Home</a>
         <a class="nav-link" href="#">Features</a>
         <a class="nav-link" href="#">Pricing</a>
         <a class="nav-link">Disabled</a>
+      </div>
+      <div class="navbar-nav">
+        <% if current_user %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+              <%= fa_icon "user" %> <%= (current_user.email).html_safe %>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item text-danger" %>
+            </div>
+          </li>
+        <% else %>
+          <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-primary ml-2" %>
+        <% end %>
       </div>
     </div>
   </div>
