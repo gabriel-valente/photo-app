@@ -1,16 +1,8 @@
-<% if notice %>
-	<div class='alert alert-success'>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-		<%= notice %>
-	</div>
-<% end %>
-<% if alert %>
-	<div class='alert alert-danger'>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-		<%= alert %>
-	</div>
+<% flash.each do |name, message| %>
+    <div class="ui <%= name %> message transition">
+    <i class="close icon"></i>
+    <div class="header">
+      <%= message %>
+    </div>
+  </div>
 <% end %>
