@@ -1,2 +1,8 @@
 @import "bootstrap";
 @import "font-awesome";
+
+.jumbotron {
+  background-image: url("home-background.jpg");
+  background-size: cover;
+  background-position: 100%;
+}
