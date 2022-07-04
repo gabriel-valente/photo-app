@@ -12,6 +12,13 @@ gem "jquery-rails"
 gem "devise-bootstrap-views"
 gem 'font-awesome-rails'
 gem "stripe"
+gem "carrierwave"
+gem "mini_magick"
+gem "fog", "~> 1.34.0"
+
+# This is required for some reason
+gem 'net-ssh'
+gem 'xmlrpc'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
@@ -40,7 +47,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap', '>= 1.1.2', require: false
 
 group :development, :test do
   gem 'sqlite3'
